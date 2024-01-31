@@ -1,8 +1,14 @@
+import Frame from "../../components/layout/Frame";
+
 const ContentList = () => {
   return (
-      <div>
-        <h1>콘텐츠 목록</h1>
-      </div>
+      <Frame>
+        <div className="main p-3">
+          <div className={"content"}>
+            <h1>콘텐츠 목록</h1>
+          </div>
+        </div>
+      </Frame>
   );
 };
 

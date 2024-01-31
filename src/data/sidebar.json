@@ -1,0 +1,68 @@
+[
+  {
+    "title": "콘텐츠 관리",
+    "icon": "bi-gear-fill",
+    "childrens": [
+      {
+        "title": "콘텐츠 목록",
+        "icon": "bi-house-fill",
+        "path": "/content/list",
+        "auth_level": "2"
+      },
+      {
+        "title": "콘텐츠 히스토리",
+        "icon": "bi-info-circle-fill",
+        "path": "/content/history",
+        "auth_level": "0"
+      }
+    ]
+  },
+  {
+    "title": "전시 상태 모니터링",
+    "icon": "bi-info-circle-fill",
+    "childrens": [
+      {
+        "title": "전시관 모니터링",
+        "path": "/exhibition/monitor",
+        "auth_level": "2"
+      },
+      {
+        "title": "오류 목록",
+        "path": "/exhibition/error",
+        "auth_level": "0"
+      }
+    ]
+  },
+  {
+    "title": "템플릿 관리",
+    "icon": "bi-view-list",
+    "childrens": [
+      {
+        "title": "화면 템플릿",
+        "path": "/templates",
+        "auth_level": "1"
+      }
+    ]
+  },
+  {
+    "title": "관리자 관리",
+    "icon": "bi-bug",
+    "childrens": [
+      {
+        "title": "관리자 권한 관리",
+        "path": "/manage/authority",
+        "auth_level": "2"
+      },
+      {
+        "title": "관리자 목록",
+        "path": "/manage/list",
+        "auth_level": "1"
+      },
+      {
+        "title": "관리업무 히스토리",
+        "path": "/manage/history",
+        "auth_level": "0"
+      }
+    ]
+  }
+]

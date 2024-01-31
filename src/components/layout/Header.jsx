@@ -1,18 +1,25 @@
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 function Header({
                   loginInfo,
                 }) {
+
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
     if (loginInfo) {
       console.log(loginInfo);
     }
   }, [loginInfo]);
+
+  // 유저 정보 임시 테스트
+  useEffect(() => {
+    const userId = window.localStorage.getItem('username');
+    setUsername(userId);
+  }, []);
+
 
   return (
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -36,10 +43,15 @@ function Header({
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>*/}
-          {loginInfo ? (
+          {username ? (
               <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text>
-                  관리자 123
+                  {username}님
+                </Navbar.Text>
+                <Navbar.Text>
+                  <button type={"button"} className={"btn btn-secondary ms-4"}>
+                    로그아웃 <i className="bi bi-arrow-bar-right"></i>
+                  </button>
                 </Navbar.Text>
               </Navbar.Collapse>
           ) : (

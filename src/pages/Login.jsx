@@ -18,7 +18,15 @@ const Login = () => {
     setLoading(true);
     await delay(500);
     console.log(`Username :${inputUsername}, Password :${inputPassword}`);
-    if (inputUsername !== "admin" || inputPassword !== "admin") {
+    if (inputUsername === "admin" || inputPassword === "admin") {
+      window.localStorage.setItem("username", inputUsername);
+      window.localStorage.setItem("auth", "2");
+      window.location.href = "/main";
+    } else if (inputUsername === "user" || inputPassword === "user") {
+      window.localStorage.setItem("username", inputUsername);
+      window.localStorage.setItem("auth", "1");
+      window.location.href = "/main";
+    } else {
       setShow(true);
     }
     setLoading(false);
@@ -32,7 +40,9 @@ const Login = () => {
   }
 
   return (
-      <Frame>
+      <Frame
+          propIsActiveSidebar={false}
+      >
         <div
             className="sign-in__wrapper"
             style={{backgroundImage: `url(${BackgroundImage})`}}

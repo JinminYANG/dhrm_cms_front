@@ -1,14 +1,17 @@
-import Header from "./Header";
 import Container from "react-bootstrap/Container";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 const Frame = ({
+                 propIsActiveHeader = true,
+                 propIsActiveSidebar = true,
                  children
                }) => {
   return (
       <Container fluid className={'p-0 wrapper'}>
-        <Header/>
+        {propIsActiveHeader && <Header/>}
         <div className={"main"}>
-          {/*<Sidebar/>*/}
+          {propIsActiveSidebar && <Sidebar/>}
           {children}
         </div>
       </Container>

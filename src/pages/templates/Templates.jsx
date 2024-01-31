@@ -1,8 +1,14 @@
+import Frame from "../../components/layout/Frame";
+
 const Templates = () => {
   return (
-      <div>
-        <h1>화면 템플릿</h1>
-      </div>
+      <Frame>
+        <div className="main p-3">
+          <div className={"content"}>
+            <h1>화면 템플릿</h1>
+          </div>
+        </div>
+      </Frame>
   );
 };
 
