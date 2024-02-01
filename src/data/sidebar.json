@@ -40,7 +40,7 @@
       {
         "title": "화면 템플릿",
         "path": "/templates",
-        "auth_level": "1"
+        "auth_level": "2"
       }
     ]
   },

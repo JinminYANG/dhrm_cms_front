@@ -1,10 +1,13 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
+import './header.scss';
 
 function Header({
                   loginInfo,
                 }) {
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
 
@@ -19,6 +22,12 @@ function Header({
     const userId = window.localStorage.getItem('username');
     setUsername(userId);
   }, []);
+
+  const logout = () => {
+    window.localStorage.removeItem('auth');
+    window.localStorage.removeItem('username');
+    navigate('/login');
+  }
 
 
   return (
@@ -49,8 +58,9 @@ function Header({
                   {username}님
                 </Navbar.Text>
                 <Navbar.Text>
-                  <button type={"button"} className={"btn btn-secondary ms-4"}>
-                    로그아웃 <i className="bi bi-arrow-bar-right"></i>
+                  <button type={"button"} className={"btn btn-sm btn-secondary ms-4"} onClick={() => logout()}>
+                    로그아웃
+                    {/*<i className="bi bi-arrow-bar-right"></i>*/}
                   </button>
                 </Navbar.Text>
               </Navbar.Collapse>
