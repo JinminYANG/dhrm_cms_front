@@ -15,7 +15,7 @@ export default function SidebarItem({item, isActive}) {
   }, []);
 
   useEffect(() => {
-    console.log(item);
+    // console.log(item);
     if (item.childrens) {
       item.childrens.map((child) => {
         if (child.path === pathName) {
